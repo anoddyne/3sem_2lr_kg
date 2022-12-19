@@ -11,26 +11,26 @@ namespace _3sem_2lr_kg
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) // нажатие на кнопку очистки
+        private void button1_Click(object sender, EventArgs e) // РЅР°Р¶Р°С‚РёРµ РЅР° РєРЅРѕРїРєСѓ РѕС‡РёСЃС‚РєРё
         {
             Graphics g = CreateGraphics();
             g.FillRectangle(new SolidBrush(SystemColors.Control), ClientRectangle);
             g.Dispose();
         }
 
-        private void button_line_Click(object sender, EventArgs e) // нажатие на кнопку "Прямая"
+        private void button_line_Click(object sender, EventArgs e) // РЅР°Р¶Р°С‚РёРµ РЅР° РєРЅРѕРїРєСѓ "С•СЂВ¤РјР°В¤"
         {
             IsLine = true;
             IsArc = false;
             IsEllipse = false;
         }
-        private void button_arc_Click(object sender, EventArgs e) // нажатие на кнопку "Дуга окружности"
+        private void button_arc_Click(object sender, EventArgs e) // РЅР°Р¶Р°С‚РёРµ РЅР° РєРЅРѕРїРєСѓ "Ж’СѓРіР° РѕРєСЂСѓР¶РЅРѕСЃС‚Рё"
         {
             IsLine = false;
             IsArc = true;
             IsEllipse = false;
         }
-        private void button_ellipse_Click(object sender, EventArgs e) // нажатие на кнопку "Эллипс"
+        private void button_ellipse_Click(object sender, EventArgs e) // РЅР°Р¶Р°С‚РёРµ РЅР° РєРЅРѕРїРєСѓ "РЃР»Р»РёРїСЃ"
         {
             IsLine = false;
             IsArc = false;
@@ -90,23 +90,23 @@ namespace _3sem_2lr_kg
             int error = 0;
             while (y >= 0)
             {
-                // дуга 1-й четверти
+                // РґСѓРіР° 1-Р№ С‡РµС‚РІРµСЂС‚Рё
                 g.FillRectangle(Brushes.Black, X1 + x, Y1 - y, 2, 2);
                 if (delta < 0)
                 {
                     error = 2 * (delta + y) - 1;
                     if (error <= 0)
-                        delta += 2 * ++x + 1;   // горизонтальный пиксель
+                        delta += 2 * ++x + 1;   // РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅС‹Р№ РїРёРєСЃРµР»СЊ
                     else
-                        delta += 2 * (++x - --y + 1);   // диагональный пиксель
+                        delta += 2 * (++x - --y + 1);   // РґРёР°РіРѕРЅР°Р»СЊРЅС‹Р№ РїРёРєСЃРµР»СЊ
                 }
                 else
                 {
                     error = 2 * (delta - x) - 1;
                     if (error > 0)
-                        delta -= 2 * --y + 1;   // вертикальный пиксель
+                        delta -= 2 * --y + 1;   // РІРµСЂС‚РёРєР°Р»СЊРЅС‹Р№ РїРёРєСЃРµР»СЊ
                     else
-                        delta += 2 * (++x - --y + 1);   // диагональный пиксель
+                        delta += 2 * (++x - --y + 1);   // РґРёР°РіРѕРЅР°Р»СЊРЅС‹Р№ РїРёРєСЃРµР»СЊ
                 }
             }
             g.Dispose();
@@ -123,23 +123,23 @@ namespace _3sem_2lr_kg
             int error = 0;
             while (y >= 0)
             {
-                // дуга 1-й четверти
+                // РґСѓРіР° 1-Р№ С‡РµС‚РІРµСЂС‚Рё
                 g.FillRectangle(Brushes.Black, X1 + x, Y1 - y, 2, 2);
                 if (delta < 0)
                 {
                     error = 2 * delta + rx2 * (2 * y - 1);
                     if (error <= 0)
-                        delta += ry2 * (2 * ++x + 1);   // горизонтальный пиксель
+                        delta += ry2 * (2 * ++x + 1);   // РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅС‹Р№ РїРёРєСЃРµР»СЊ
                     else
-                        delta += ry2 * (2 * ++x + 1) - rx2 * (2 * --y - 1);    // диагональный пиксель
+                        delta += ry2 * (2 * ++x + 1) - rx2 * (2 * --y - 1);    // РґРёР°РіРѕРЅР°Р»СЊРЅС‹Р№ РїРёРєСЃРµР»СЊ
                 }
                 else
                 {
                     error = 2 * delta - ry2 * (2 * x + 1);
                     if (error > 0)
-                        delta -= rx2 * (2 * --y + 1);   // вертикальный пиксель
+                        delta -= rx2 * (2 * --y + 1);   // РІРµСЂС‚РёРєР°Р»СЊРЅС‹Р№ РїРёРєСЃРµР»СЊ
                     else
-                        delta += ry2 * (2 * ++x + 1) - rx2 * (2 * --y - 1);   // диагональный пиксель
+                        delta += ry2 * (2 * ++x + 1) - rx2 * (2 * --y - 1);   // РґРёР°РіРѕРЅР°Р»СЊРЅС‹Р№ РїРёРєСЃРµР»СЊ
                 }
             }
             g.Dispose();
@@ -147,14 +147,14 @@ namespace _3sem_2lr_kg
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            p1 = e.Location; //начальное положение курсора
+            p1 = e.Location; //РЅР°С‡Р°Р»СЊРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ РєСѓСЂСЃРѕСЂР°
         }
 
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsLine)
             {
-                p2 = e.Location; //конечное положение курсора
+                p2 = e.Location; //РєРѕРЅРµС‡РЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ РєСѓСЂСЃРѕСЂР°
                 int r = (int)Math.Sqrt(Math.Pow((p2.X - p1.X), 2) + Math.Pow((p2.Y - p1.Y), 2));
                 Line(p1.X, p1.Y, p2.X, p2.Y);
             }
